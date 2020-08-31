@@ -70,7 +70,14 @@ function setup() {
 
 function draw() {
   //trex.debug = true;
-  background(255);
+  background(220);
+  if(score % 100 ===0){
+    bgcolor = 220;
+  }
+ if(score % 200 === 0){
+    bgcolor = 180;
+  }
+
   text("Score: "+ score, 500,50);
   
   if (gameState===PLAY){
@@ -81,9 +88,9 @@ function draw() {
       trex.velocityY = -12;
       trex.tint = "blue"
     }else if(trex.collide(invisibleGround)){
-      trex.tint = "grey"
+      trex.tint = "green"
     }
-  
+    
     trex.velocityY = trex.velocityY + 0.8
   
     if (ground.x < 0){
